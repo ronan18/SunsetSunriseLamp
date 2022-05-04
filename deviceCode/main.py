@@ -2,7 +2,7 @@ import pymongo
 import json
 import schedule
 import time
-
+import lightControl
 with open('../private/keys.json') as f:
     keys = json.load(f)
 
@@ -45,8 +45,9 @@ def runSunsetSequence():
     print("running sunset sequence")
 
 
+
 sunriseJob = schedule.every().day.at('07:00').do(runSunriseSequence)
-sunsetJob = schedule.every().day.at('18:00').do(runSunsetSequence)
+sunsetJob = schedule.every().day.at('21:00').do(runSunsetSequence)
 runner()
 
 schedule.every(1).minutes.do(runner)
