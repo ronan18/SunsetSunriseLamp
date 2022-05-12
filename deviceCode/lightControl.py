@@ -8,6 +8,7 @@ def setLightColor(red,green,blue):
     global mode
     print("setting light color",red,green,blue, mode)
     if mode == "UH":
+        uh.clear()
        for x in range(17):
            for y in range(7):
                uh.set_pixel(x, y, red, green, blue)
@@ -32,5 +33,5 @@ def runGradientFade(startRed, startGreen, startBlue, endRed, endGreen, endBlue, 
 
     return
 
-setLightColor(255,255,255)
-#runGradientFade(15,200,130,255,255,255,1)
+#setLightColor(255,255,255)
+runGradientFade(15,200,130,255,255,255,1)
