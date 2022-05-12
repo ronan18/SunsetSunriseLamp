@@ -21,13 +21,16 @@ def runGradientFade(startRed, startGreen, startBlue, endRed, endGreen, endBlue, 
     redDiff = endRed - startRed
     greenDiff = endGreen - startGreen
     blueDiff = endBlue - startBlue
+    colorDiff = 1 - 0.1
 
     redIncrement = redDiff/resolution
     greenIncrement = greenDiff/resolution
     blueIncrement = blueDiff/resolution
+    colorIncrement = colorDiff/resolution
 
     for i in range(resolution):
         print((i/resolution)*100)
+        uh.set_brightness(0.1 + colorIncrement)
         setLightColor(round(startRed + (redIncrement*i)),round(startGreen + (greenIncrement*i)), round(startBlue + (blueIncrement*i)))
         time.sleep(timePerStep)
 
