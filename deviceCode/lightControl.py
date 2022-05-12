@@ -34,4 +34,4 @@ def runGradientFade(startRed, startGreen, startBlue, endRed, endGreen, endBlue, 
     return
 
 #setLightColor(255,255,255)
-runGradientFade(50,51,77,252,106,56,0.1)
+runGradientFade(50,51,77,252,106,56,0.01)
