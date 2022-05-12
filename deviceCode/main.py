@@ -38,11 +38,16 @@ def runner():
    # print(all_jobs, "job summery")
 
 def runSunriseSequence():
+    global lightConfig
     print("running sunrise sequence")
+    lightControl.runGradientFade(lightConfig["sunriseRed"]-10,lightConfig["sunriseGreen"]-10, lightConfig["sunriseBlue"]-10,lightConfig["sunriseRed"],lightConfig["sunriseGreen"], lightConfig["sunriseBlue"], lightConfig["sunriseRunTimeInMin"])
 
 
 def runSunsetSequence():
+    global lightConfig
     print("running sunset sequence")
+    lightControl.runGradientFade(lightConfig["sunsetRed"]-10,lightConfig["sunsetGreen"]-10, lightConfig["sunsetBlue"]-10,lightConfig["sunsetRed"],lightConfig["sunsetGreen"], lightConfig["sunsetBlue"], lightConfig["sunsetRunTimeInMin"])
+
 
 
 
