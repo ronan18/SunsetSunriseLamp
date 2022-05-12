@@ -28,7 +28,7 @@ def runGradientFade(startRed, startGreen, startBlue, endRed, endGreen, endBlue, 
 
     for i in range(resolution):
         print(i)
-        setLightColor(round(startRed + (redIncrement*i)),round(startGreen + (greenIncrement*i)), round(startRed + (redIncrement*i)))
+        setLightColor(round(startRed + (redIncrement*i)),round(startGreen + (greenIncrement*i)), round(startRed + (blueIncrement*i)))
         time.sleep(timePerStep)
 
     return
