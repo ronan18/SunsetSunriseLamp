@@ -9,10 +9,10 @@ def setLightColor(red,green,blue):
     print("setting light color",red,green,blue, mode)
     if mode == "UH":
         uh.clear()
-       for x in range(17):
-           for y in range(7):
-               uh.set_pixel(x, y, red, green, blue)
-       uh.show()
+        for x in range(17):
+            for y in range(7):
+                uh.set_pixel(x, y, red, green, blue)
+        uh.show()
     return
 
 def runGradientFade(startRed, startGreen, startBlue, endRed, endGreen, endBlue, timeInMin):
