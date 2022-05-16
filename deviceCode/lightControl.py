@@ -4,8 +4,34 @@ uh = UnicornHATMini()
 uh.set_brightness(1)
 global mode
 mode = "UH"
+
+import RPi.GPIO as GPIO
+import time as time
+
+if mode == "STRIP":
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(18, GPIO.OUT)
+    GPIO.setup(22, GPIO.OUT)
+    GPIO.setup(6, GPIO.OUT)
+    blueLight = GPIO.PWM(18, 50)
+    redLight = GPIO.PWM(22, 50)
+    greenLight = GPIO.PWM(6, 50)
+    # GPIO18, frequency=50Hz
+    redLight.start(0)
+    greenLight.start(0)
+    blueLight.start(0)
+
+
+
+
+
+def rgbToPercent(x):
+    return (100*x)/255
 def setLightColor(red,green,blue):
     global mode
+    global redLight
+    global blueLight
+    global greenLight
     print("setting light color",red,green,blue, mode)
     if mode == "UH":
         uh.clear()
@@ -13,6 +39,10 @@ def setLightColor(red,green,blue):
             for y in range(7):
                 uh.set_pixel(x, y, red, green, blue)
         uh.show()
+    else:
+        redLight.ChangeDutyCycle(rgbToPercent(red))
+        greenLight.ChangeDutyCycle(rgbToPercent(green))
+        blueLight.ChangeDutyCycle(rgbToPercent(blue))
     return
 
 def runGradientFade(startRed, startGreen, startBlue, endRed, endGreen, endBlue, timeInMin):
