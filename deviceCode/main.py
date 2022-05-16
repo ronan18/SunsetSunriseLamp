@@ -40,7 +40,7 @@ def runner():
 def runSunriseSequence():
     global lightConfig
     print("running sunrise sequence")
-    lightControl.runGradientFade(int(lightConfig["sunriseRed"])-10,int(lightConfig["sunriseGreen"])-10, int(lightConfig["sunriseBlue"])-10,int(lightConfig["sunriseRed"]),int(lightConfig["sunriseGreen"]), int(lightConfig["sunriseBlue"]), int(lightConfig["sunriseRunTimeInMin"])
+    lightControl.runGradientFade(int(lightConfig["sunriseRed"])-10,int(lightConfig["sunriseGreen"])-10, int(lightConfig["sunriseBlue"])-10,int(lightConfig["sunriseRed"]),int(lightConfig["sunriseGreen"]), int(lightConfig["sunriseBlue"]), int(lightConfig["sunriseRunTimeInMin"]))
 
 
 def runSunsetSequence():
