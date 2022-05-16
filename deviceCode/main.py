@@ -55,7 +55,7 @@ sunriseJob = schedule.every().day.at('07:00').do(runSunriseSequence)
 sunsetJob = schedule.every().day.at('21:00').do(runSunsetSequence)
 runner()
 
-schedule.every(1).minutes.do(runner)
+schedule.every(20).seconds.do(runner)
 
 while True:
     schedule.run_pending()
